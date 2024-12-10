@@ -82,8 +82,8 @@ function sumArrays(arr1, arr2) {
  *    findElement(['Array', 'Number', 'string'], 'Date') => -1
  *    findElement([0, 1, 2, 3, 4, 5], 5) => 5
  */
-function findElement(/* arr, value */) {
-  throw new Error('Not implemented');
+function findElement(arr, value) {
+  return arr.indexOf(value);
 }
 
 /**
@@ -100,8 +100,15 @@ function findElement(/* arr, value */) {
  *    findAllOccurrences([ null, undefined, null ], null) => 2
  *    findAllOccurrences([ true, 0, 1, 'true' ], true) => 1
  */
-function findAllOccurrences(/* arr, item */) {
-  throw new Error('Not implemented');
+function findAllOccurrences(arr, item) {
+  let count = 0;
+  arr.map((elem) => {
+    if (elem === item) {
+      count += 1;
+    }
+    return 0;
+  });
+  return count;
 }
 
 /**
@@ -119,6 +126,22 @@ function findAllOccurrences(/* arr, item */) {
 function removeFalsyValues(/* arr */) {
   throw new Error('Not implemented');
 }
+//   const newArr = arr;
+//   arr.filter((elem, index) => {
+//     if (
+//       Number.isNaN(elem) ||
+//       elem === '' ||
+//       elem !== false ||
+//       elem === 0 ||
+//       elem === undefined
+//     ) {
+//       newArr.splice(index, 1);
+//     }
+//     return 0;
+//   });
+//   console.log('ds', newArr);
+//   return newArr;
+// }
 
 /**
  * Returns an array containing the lengths of each string in a specified array of strings.
@@ -130,8 +153,13 @@ function removeFalsyValues(/* arr */) {
  *    getStringsLength([ '', 'a', 'bc', 'def', 'ghij' ]) => [ 0, 1, 2, 3, 4 ]
  *    getStringsLength([ 'angular', 'react', 'ember' ]) => [ 7, 5, 5 ]
  */
-function getStringsLength(/* arr */) {
-  throw new Error('Not implemented');
+function getStringsLength(arr) {
+  const newArr = [];
+  arr.map((elem) => {
+    newArr.push(elem.length);
+    return 0;
+  });
+  return newArr;
 }
 
 /**
@@ -148,8 +176,15 @@ function getStringsLength(/* arr */) {
  *   getAverage([ 1, 10, 100, 1000 ])  => 277,75
  *   getAverage([ 2, 3, 3 ])  => 2,67
  */
-function getAverage(/* arr */) {
-  throw new Error('Not implemented');
+function getAverage(arr) {
+  let a = 0;
+  if (arr.length === 0) {
+    return 0;
+  }
+  a = arr.reduce(function acc(sum, current) {
+    return sum + current / arr.length;
+  }, 0);
+  return Math.ceil(a * 100) / 100;
 }
 
 /**
