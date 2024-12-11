@@ -337,6 +337,13 @@ function distinct(arr) {
  *    createNDimensionalArray(1, 1) => [0]
  */
 function createNDimensionalArray(/* n, size */) {
+  // const arr = [];
+  // const arrBig = [];
+  // arr.fill(0, 0, size);
+  // for (let i = 0; i < size; i += 1) {
+  //   arrBig.push(arr);
+  // }
+  //
   throw new Error('Not implemented');
 }
 
@@ -351,8 +358,8 @@ function createNDimensionalArray(/* n, size */) {
  *    flattenArray(['a', ['b', ['c', 'd'], 'e'], 'f']) => ['a', 'b', 'c', 'd', 'e', 'f']
  *    flattenArray([1, 2, 3, 4]) => [1, 2, 3, 4]
  */
-function flattenArray(/* nestedArray */) {
-  throw new Error('Not implemented');
+function flattenArray(nestedArray) {
+  return nestedArray.flat(Infinity);
 }
 
 /**
