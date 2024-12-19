@@ -443,8 +443,20 @@ function createChunks(arr, chunkSize) {
  *    generateOdds(2) => [ 1, 3 ]
  *    generateOdds(5) => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
+function generateOdds(len) {
+  let i = 1;
+  let count = 0;
+  const arr = [];
+  function addNum() {
+    arr.push(i);
+    i += 2;
+    count += 1;
+    if (count < len) {
+      addNum();
+    }
+  }
+  addNum();
+  return arr;
 }
 
 /**
@@ -459,8 +471,13 @@ function generateOdds(/* len */) {
  *   getElementByIndices(['one','two','three'], [2]) => 'three'  (arr[2])
  *   getElementByIndices([[[ 1, 2, 3]]], [ 0, 0, 1 ]) => 2        (arr[0][0][1])
  */
-function getElementByIndices(/* arr, indices */) {
-  throw new Error('Not implemented');
+function getElementByIndices(arr, indices) {
+  let elem = arr;
+  indices.map((item) => {
+    elem = elem[item];
+    return 0;
+  });
+  return elem;
 }
 
 /**
@@ -475,8 +492,25 @@ function getElementByIndices(/* arr, indices */) {
  *  getFalsyValuesCount([ -1, 'false', null, 0 ]) => 2
  *  getFalsyValuesCount([ null, undefined, NaN, false, 0, '' ]) => 6
  */
-function getFalsyValuesCount(/* arr */) {
-  throw new Error('Not implemented');
+function getFalsyValuesCount(arr) {
+  let i = 0;
+  if (arr.length === 0) {
+    return 0;
+  }
+  arr.map((item) => {
+    if (
+      item === false ||
+      item === null ||
+      item === 0 ||
+      item === undefined ||
+      Number.isNaN(item) ||
+      item === ''
+    ) {
+      i += 1;
+    }
+    return 0;
+  });
+  return i;
 }
 
 /**
