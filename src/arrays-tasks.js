@@ -123,26 +123,9 @@ function findAllOccurrences(arr, item) {
  *    removeFalsyValues([ 1, 2, 3, 4, 5, 'false' ]) => [ 1, 2, 3, 4, 5, 'false' ]
  *    removeFalsyValues([ false, 0, NaN, '', undefined ]) => [ ]
  */
-function removeFalsyValues(/* arr */) {
-  throw new Error('Not implemented');
+function removeFalsyValues(arr) {
+  return arr.filter((elem) => !!elem);
 }
-
-//   const newArr = arr;
-//   arr.filter((elem, index) => {
-//     if (
-//       Number.isNaN(elem) ||
-//       elem === '' ||
-//       elem !== false ||
-//       elem === 0 ||
-//       elem === undefined
-//     ) {
-//       newArr.splice(index, 1);
-//     }
-//     return 0;
-//   });
-//   console.log('ds', newArr);
-//   return newArr;
-// }
 
 /**
  * Returns an array containing the lengths of each string in a specified array of strings.
@@ -546,8 +529,15 @@ function getIdentityMatrix(/* n */) {
  *    getIndicesOfOddNumbers([2, 4, 6, 8, 10]) => []
  *    getIndicesOfOddNumbers([11, 22, 33, 44, 55]) => [0, 2, 4]
  */
-function getIndicesOfOddNumbers(/* numbers */) {
-  throw new Error('Not implemented');
+function getIndicesOfOddNumbers(numbers) {
+  const odds = [];
+  numbers.map((elem, index) => {
+    if (elem % 2 !== 0) {
+      odds.push(index);
+    }
+    return 0;
+  });
+  return odds;
 }
 
 /**
@@ -560,8 +550,14 @@ function getIndicesOfOddNumbers(/* numbers */) {
  *    getHexRGBValues([ 0, 255, 16777215]) => [ '#000000', '#0000FF', '#FFFFFF' ]
  *    getHexRGBValues([]) => []
  */
-function getHexRGBValues(/* arr */) {
-  throw new Error('Not implemented');
+function getHexRGBValues(arr) {
+  return arr.map((elem) => {
+    const str = elem.toString(16).toUpperCase();
+    if (str.length === 6) {
+      return `#${str}`;
+    }
+    return `#${str.padStart(6, '0')}`;
+  });
 }
 
 /**
@@ -578,8 +574,8 @@ function getHexRGBValues(/* arr */) {
  *   getMaxItems([ 10, 2, 7, 5, 3, -5 ], 3) => [ 10, 7, 5 ]
  *   getMaxItems([ 10, 10, 10, 10 ], 3) => [ 10, 10, 10 ]
  */
-function getMaxItems(/* arr, n */) {
-  throw new Error('Not implemented');
+function getMaxItems(arr, n) {
+  return arr.sort((a, b) => b - a).slice(0, n);
 }
 
 /**
@@ -594,8 +590,15 @@ function getMaxItems(/* arr, n */) {
  *    findCommonElements(['a', 'b', 'c'], ['b', 'c', 'd']) => [ 'b', 'c' ]
  *    findCommonElements([1, 2, 3], ['a', 'b', 'c']) => []
  */
-function findCommonElements(/* arr1, arr2 */) {
-  throw new Error('Not implemented');
+function findCommonElements(arr1, arr2) {
+  const arr3 = [];
+  arr1.map((elem) => {
+    if (arr2.includes(elem)) {
+      arr3.push(elem);
+    }
+    return 0;
+  });
+  return arr3;
 }
 
 /**
