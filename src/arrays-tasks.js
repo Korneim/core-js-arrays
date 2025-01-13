@@ -650,8 +650,6 @@ function propagateItemsByPositionIndex(/* arr */) {
 function shiftArray(arr, n) {
   const d = n > 0 ? n + 1 : n * -1;
   const newArr = arr.splice(d);
-  console.log(newArr);
-  console.log(newArr.concat(arr));
   return newArr.concat(arr);
 }
 
